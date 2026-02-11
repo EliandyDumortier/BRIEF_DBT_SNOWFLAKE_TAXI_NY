@@ -1,0 +1,11 @@
+version: 2
+
+sources:
+  - name: raw
+    description: "Raw layer containing unmodified NYC taxi trip data loaded from parquet files."
+    database: NYC_TAXI_DB
+    schema: RAW
+
+    tables:
+      - name: yellow_taxi_trips
+        description: "Raw yellow taxi trip records for 2024. Data ingested directly from TLC parquet files without transformation."
