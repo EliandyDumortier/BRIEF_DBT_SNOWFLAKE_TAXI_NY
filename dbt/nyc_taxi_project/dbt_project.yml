@@ -32,9 +32,16 @@ clean-targets:         # directories to be removed by `dbt clean`
 
 models:
   nyc_taxi_project:
+    +materialized: view
+
     staging:
       +schema: STAGING
+      +database: NYC_TAXI_DB
+
     intermediate:
       +schema: INTERMEDIATE
+      +database: NYC_TAXI_DB
+
     marts:
       +schema: MART
+      +database: NYC_TAXI_DB
