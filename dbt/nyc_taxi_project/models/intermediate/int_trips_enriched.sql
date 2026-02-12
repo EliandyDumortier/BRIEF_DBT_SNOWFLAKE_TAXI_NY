@@ -1,14 +1,11 @@
-{{ config(materialized='table') }}
-
 with trips as (
 
-    select * from {{ ref('int_trips_enriched') }}
-
+    select *
+    from {{ ref('stg_trips') }}
 
 )
 
 select
-
     vendor_id,
     passenger_count,
     trip_distance,
@@ -22,18 +19,16 @@ select
     tip_amount,
     tolls_amount,
     total_amount,
-
     pickup_ts,
     dropoff_ts,
 
-    -- Derived metric (basic enrichment only)
+    -- Business logic lives here
     datediff(minute, pickup_ts, dropoff_ts) as trip_duration_minutes,
 
-    -- Date breakdown (for analytics)
-    date(pickup_ts)  as trip_date,
-    year(pickup_ts)  as trip_year,
-    month(pickup_ts) as trip_month,
-    day(pickup_ts)   as trip_day,
-    hour(pickup_ts)  as trip_hour
+    case
+        when trip_distance > 0
+        then fare_amount / trip_distance
+        else null
+    end as fare_per_km
 
 from trips
