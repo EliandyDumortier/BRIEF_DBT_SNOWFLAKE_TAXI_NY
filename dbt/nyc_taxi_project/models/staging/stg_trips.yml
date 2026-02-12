@@ -1,0 +1,25 @@
+version: 2
+
+models:
+  - name: stg_trips
+    description: "Cleaned taxi trips from raw source data."
+
+    columns:
+      - name: vendor_id
+        tests:
+          - not_null
+
+      - name: pickup_ts
+        tests:
+          - not_null
+
+      - name: dropoff_ts
+        tests:
+          - not_null
+
+      - name: trip_distance
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              min_value: 0
+              max_value: 100
