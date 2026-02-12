@@ -2,7 +2,7 @@
 
 <div align="center">
 
-![NYC Taxi](https://images.pexels.com/photos/2685034/pexels-photo-2685034.jpeg?auto=compress&cs=tinysrgb&w=1200&h=300&fit=crop)
+![NYC Taxi](https://i0.wp.com/w42st.com/wp-content/uploads/2022/09/david-becker-6rWCc5h7Y7o-unsplash.jpg?resize=1024%2C541&ssl=1?auto=compress&cs=tinysrgb&w=1200&h=300&fit=crop)
 
 ### Modern Data Warehouse Architecture for NYC Yellow Taxi Dataset
 
@@ -462,7 +462,7 @@ Analytics Engineer & Data Architect specializing in scalable data warehouse solu
 <div align="center">
 
 [![GitHub](https://img.shields.io/badge/GitHub-Profile-100000?style=for-the-badge&logo=github)](https://github.com/EliandyDumortier/)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/eliandy-dumortier)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/eliandy-r-4a0592a8)
 
 </div>
 
