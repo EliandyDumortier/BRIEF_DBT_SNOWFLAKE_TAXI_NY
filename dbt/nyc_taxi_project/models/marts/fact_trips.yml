@@ -1,0 +1,5 @@
+version: 2
+
+models:
+  - name: fact_trips
+    description: "Final fact table for taxi trip analytics."

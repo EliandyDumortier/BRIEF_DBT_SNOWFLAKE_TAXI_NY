@@ -2,25 +2,67 @@ version: 2
 
 models:
   - name: stg_trips
-    description: "Cleaned taxi trips from raw source data."
+    description: >
+      Cleaned staging model for NYC yellow taxi trips.
+      This model standardizes column names, converts timestamps,
+      and applies initial data quality filtering rules.
 
     columns:
+
       - name: vendor_id
+        description: "Identifier of the taxi vendor operating the trip."
         tests:
           - not_null
 
-      - name: pickup_ts
-        tests:
-          - not_null
-
-      - name: dropoff_ts
-        tests:
-          - not_null
+      - name: passenger_count
+        description: "Number of passengers recorded for the trip."
 
       - name: trip_distance
+        description: "Total distance of the trip in miles."
         tests:
           - not_null
           - dbt_utils.accepted_range:
               arguments:
                 min_value: 0
                 max_value: 100
+
+      - name: rate_code_id
+        description: "Rate code applied to the trip."
+
+      - name: pu_location_id
+        description: "Pickup location identifier."
+
+      - name: do_location_id
+        description: "Dropoff location identifier."
+
+      - name: payment_type
+        description: "Payment method used for the trip."
+
+      - name: fare_amount
+        description: "Base fare amount charged for the trip."
+
+      - name: extra
+        description: "Extra charges applied to the trip."
+
+      - name: mta_tax
+        description: "MTA tax applied to the trip."
+
+      - name: tip_amount
+        description: "Tip amount paid by the passenger."
+
+      - name: tolls_amount
+        description: "Toll charges applied during the trip."
+
+      - name: total_amount
+        description: "Total amount charged for the trip including all fees."
+
+      - name: pickup_ts
+        description: "Timestamp of passenger pickup."
+        tests:
+          - not_null
+
+      - name: dropoff_ts
+        description: "Timestamp of passenger dropoff."
+        tests:
+          - not_null
+

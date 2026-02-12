@@ -1,0 +1,5 @@
+version: 2
+
+models:
+  - name: int_trips_enriched
+    description: "Trips enriched with derived business metrics such as duration and fare per km."
